@@ -33,14 +33,24 @@ npm run build   # статическая сборка в dist/
 
 ## Сборка APK (Capacitor)
 
+Проект Android уже сгенерирован (`android/`), иконка и splash-экран собраны
+из `assets/icon.png` и `assets/splash.png` через `@capacitor/assets`. Чтобы
+собрать APK:
+
 ```bash
-npm run build
-npx cap sync android
-cd android && ./gradlew assembleDebug
+npm run android:apk
 ```
 
-Готовый APK: `android/app/build/outputs/apk/debug/app-debug.apk`.
-Приложение не делает сетевых запросов и полностью работает в самолёте.
+(это то же самое, что `npm run build && npx cap sync android && cd android && ./gradlew assembleDebug`)
+
+Готовый файл: `android/app/build/outputs/apk/debug/app-debug.apk`.
+
+Требуется Android SDK (`ANDROID_HOME`/`local.properties`) и обычный доступ в
+интернет к `dl.google.com` — Android Gradle Plugin и androidx-зависимости
+раздаёт только Google Maven, без него Gradle не соберёт проект. Сама игра
+после сборки APK сетевых запросов не делает и полностью работает в
+самолёте — офлайн-требование касается только рантайма приложения, не
+тулчейна сборки.
 
 ## Геймплей вкратце
 
