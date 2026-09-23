@@ -38,7 +38,7 @@ jobs:
 
       - name: Set up Android SDK (cmdline-tools)
         env:
-          ANDROID_HOME: /usr/local/lib/android-sdk
+          ANDROID_HOME: /home/runner/android-sdk
         run: |
           set -euo pipefail
           mkdir -p "$ANDROID_HOME/cmdline-tools"
