@@ -1,0 +1,65 @@
+@import 'tailwindcss';
+@import '@fontsource/press-start-2p/400.css';
+@import '@fontsource/press-start-2p/cyrillic-400.css';
+@import '@fontsource/pixelify-sans/400.css';
+@import '@fontsource/pixelify-sans/cyrillic-400.css';
+@import '@fontsource/pixelify-sans/600.css';
+@import '@fontsource/pixelify-sans/cyrillic-600.css';
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overscroll-behavior: none;
+  background: #2c6f96;
+}
+
+body {
+  font-family: 'Pixelify Sans', ui-monospace, monospace;
+  touch-action: none;
+}
+
+canvas {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+.font-pixel {
+  font-family: 'Pixelify Sans', ui-monospace, monospace;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.font-pixel-title {
+  font-family: 'Press Start 2P', ui-monospace, monospace;
+}
+
+.pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  border: 2px solid #3a2c1e;
+  background: #e0623f;
+  color: #fff8e8;
+  box-shadow: 0 3px 0 #8a2f1c;
+  transition: transform 0.06s ease, box-shadow 0.06s ease;
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #8a2f1c;
+}
+
+.pixel-btn:disabled {
+  cursor: not-allowed;
+}
