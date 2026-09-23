@@ -55,7 +55,7 @@ jobs:
       - name: Install Android SDK packages
         run: |
           set -euo pipefail
-          yes | sdkmanager --licenses --sdk_root="$ANDROID_HOME" > /dev/null
+          yes | sdkmanager --licenses --sdk_root="$ANDROID_HOME" > /dev/null || true
           sdkmanager --sdk_root="$ANDROID_HOME" "platform-tools" "platforms;android-36" "build-tools;35.0.0"
 
       - name: Install dependencies
